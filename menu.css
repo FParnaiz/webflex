@@ -1,0 +1,12 @@
+.menu_cont{
+    background-color: peru;
+    display: flex;
+    height: 10vh;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+}
+.menu_item{
+    
+
+}
