@@ -1,0 +1,80 @@
+/*--------------------------------------------
+                nivel 0
+               variables
+        Defino variables que usare para 
+        calcular el tamaño de los cuadrados
+        y su posicon a la hora de moverse
+---------------------------------------------*/
+
+:root { 
+    --lado: 10vh; /* Esta variable me permite modificar todos simplmente cambiando este valor*/
+    --bordeLEFT: calc((100vw) - var(--lado)); /* limite a la derecha en realacion al tamaño del cuadrado*/
+    --bordeBOT: calc((90vh) - var(--lado));/* limite inferior en realacion al tamaño del cuadrado*/
+}
+/*--------------------------------------------
+                nivel 2
+        contenedores animacion
+- Position absolute para que no intefieran 
+  con otros elmentos
+- z-index para colocarlos a diferestes alturas
+---------------------------------------------*/
+.cont1 {
+    position: absolute;
+    z-index: 3;
+}
+.cont2 {
+    position: absolute;
+    z-index: 2;
+}.cont3 {
+    position: absolute;
+    z-index: 1;
+}
+/*------------------------------------------------------------
+                nivel 3
+        elementos animados
+- Position absolute para que no intefieran 
+  con otros elmentos
+- El witdh y height usando las variables 
+- El nombre, duracion, nuemro de vueltas de la animación
+- cada uno tiene un delay distinto apra conseguir un efecto visual
+-------------------------------------------------------------------*/
+#animation {
+    width: var(--lado);
+    height: var(--lado);
+    background: red;
+    position: absolute;
+    animation-name: vueltas;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+}
+#animation2 {
+    width: var(--lado);
+    height: var(--lado);
+    background: green;
+    position: absolute;
+    animation-name: vueltas;
+    animation-duration: 10s;
+    animation-delay: 0.8s;
+    animation-iteration-count: infinite;
+}
+#animation3 {
+    width: var(--lado);
+    height: var(--lado);
+    background: brown;
+    position: absolute;
+    animation-name: vueltas;
+    animation-duration: 10s;
+    animation-delay: 1.6s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes vueltas {
+    0%   {left: 0; top: 0;}
+    10%  {left: 0; top: calc(var(--bordeBOT));}
+    40%  {left: calc(var(--bordeLEFT)); top: calc(var(--bordeBOT));}
+    50%  {left: calc(var(--bordeLEFT)); top: 0;}
+    92% {left: 0; top: 0;}
+    100% {left: 0; top: 0;}
+}
+
+

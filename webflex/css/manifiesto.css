@@ -1,0 +1,171 @@
+
+/*------------------------------------------------------
+                    generales
+---------------------------------------------------------*/
+*{
+    margin: 0;
+    padding: 0;
+}
+main{
+    background-color: darkolivegreen;
+    display: flex;
+}
+article{
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    height: 90vh;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+p{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/*------------------------------------------------------
+            estilos para vertical
+---------------------------------------------------------*/
+@media screen and (orientation: portrait) {
+    p{
+        margin: 1vh;
+        font-size: 3vw;
+        visibility: hidden;
+    }
+
+}
+/*------------------------------------------------------
+            estilos para horizontal
+---------------------------------------------------------*/
+@media screen and (orientation: landscape) {
+    p{
+        margin: 3vh;
+        font-size: 3vh;
+        visibility: hidden;
+    }
+}
+/*------------------------------------------------------
+                    triggers
+Position absolute para que no con los cont pero esten dentro 
+del article y pueda selecionar usando css
+---------------------------------------------------------*/
+.trigger{
+    position: absolute;
+    display: flex;
+    width: 10vh;
+    height: 10vh;
+    background-color: white;
+    justify-content: center;
+}
+#mani-trigger{
+    top: 20vh;
+    left: 10vh;
+}
+#pro-trigger{
+    top: 20vh;
+    right: 10vh;
+}
+#ideal-trigger{
+    bottom: 10vh;
+    left: 10vh;
+}
+#prin-trigger{
+    bottom: 10vh;
+    right: 10vh;
+}
+/*------------------------------------------------------
+                    contenedores
+---------------------------------------------------------*/
+.cont{
+    height: 10vh;
+    width: 10vh;
+    overflow: hidden;
+    transition: all;
+    transition-duration: 2s;
+    transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#fiesto-cont {
+    background-color: red;
+    margin-left: 10vh;
+}
+#pro-cont{
+    background-color: bisque;
+}
+#ideal-cont{
+    background-color: rgb(196, 212, 255);
+}
+#print-cont{
+    background-color: yellowgreen;
+    margin-right: 10vh;
+}
+
+/*------------------------------------------------------
+         eventos comunes en ambas horientaciones
+---------------------------------------------------------*/
+#mani-trigger:hover ~ #fiesto-cont p{
+    visibility: visible;
+}
+#pro-trigger:hover ~ #pro-cont p{
+    visibility: visible;
+}
+#prin-trigger:hover ~ #print-cont p{
+    visibility: visible;
+}
+#ideal-trigger:hover ~ #ideal-cont p{
+    visibility: visible;
+}
+/*------------------------------------------------------
+            eventos para horizontal
+---------------------------------------------------------*/
+@media screen and (orientation: landscape) {
+    #mani-trigger:hover ~ #fiesto-cont{
+        height: 50vh;
+        width: 100vw;
+    }
+   
+    #pro-trigger:hover ~ #pro-cont{
+        height: 50vh;
+        width: 100vw;
+    }
+    #prin-trigger:hover ~ #print-cont{
+        height: 50vh;
+        width: 100vw;
+    }
+    #ideal-trigger:hover ~ #ideal-cont{
+        height: 50vh;
+        width: 100vw;
+    }
+}
+/*------------------------------------------------------
+            eventos para vertical
+---------------------------------------------------------*/
+@media screen and (orientation: portrait) {
+    #mani-trigger:hover ~ #fiesto-cont{
+        height: 50vh;
+        width: 800vw;
+    }
+    #mani-trigger:hover ~ #fiesto-cont p{
+        visibility: visible;
+    }
+    #pro-trigger:hover ~ #pro-cont{
+        height: 50vh;
+        width: 800vw;
+    }
+    #prin-trigger:hover ~ #print-cont{
+        height: 50vh;
+        width: 800vw;
+    }
+    #ideal-trigger:hover ~ #ideal-cont{
+        height: 50vh;
+        width: 800vw;
+    }
+}

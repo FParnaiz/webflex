@@ -1,0 +1,116 @@
+
+
+/*------------------------------------------------------
+            estilos para horizontal
+---------------------------------------------------------*/
+@media screen and (orientation: landscape) {
+    /*--------------------------------------------
+                nivel 0
+               variables
+        defino el tamaño del video para que en 
+        horizontal ocupe el espacio justo para
+        que los recuadros animados pasen justo
+    ---------------------------------------------*/
+    :root {
+        --videoH: 70vh;/* total - barra menu (10vh) - 2recuadros(2*10vh) */
+        --videoW: calc((16/9) * var(--videoH));/* calculo la longitud manteniendo la proporcion*/
+    }
+     /*--------------------------------------------
+                nivel 1
+           body y contenedor video
+
+    ---------------------------------------------*/
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: blue;
+    }
+    #cont-video {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+   /*--------------------------------------------
+                nivel 2
+               video y boton
+    - En el video limito las dimensiones maximas a las
+      que he definido previamente
+    - El boton tiene posición absoluta para poder ponerlo
+      encima del espacio que ocupa el video sin que moleste 
+      en el posicionamiento de este
+    ---------------------------------------------*/
+    #video {
+        margin-top: 10vh;
+        max-width: var(--videoW); 
+        max-height: var(--videoH); 
+        visibility: hidden;
+    }
+    #boton{
+        visibility: visible;
+        position: absolute;
+        width: 20vh;
+        height: 20vh;
+        border: none;
+        color: blueviolet;
+        font-size: 5vh;
+        background-color: black;
+        font-family: "Comic Sans MS", cursive;
+        
+    }
+    
+}
+/*------------------------------------------------------
+            estilos para vertical
+---------------------------------------------------------*/
+@media screen and (orientation: portrait) {
+  /*--------------------------------------------
+                nivel 0
+               variables
+    ---------------------------------------------*/
+    :root {
+        --videoW: calc((100vw) - (20vh));/* total  - 2recuadros(2*10vh) */
+        --videoH: calc(((90vh) / (100vw) * var(--videoW)));/* calculo la altura manteniendo la proporcion*/
+    }
+  /*--------------------------------------------
+                nivel 1
+           body y contenedor video
+
+    ---------------------------------------------*/
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: yellow;
+
+    }
+    
+    #cont-video {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 90vh;
+        
+    }
+   /*--------------------------------------------
+                nivel 2
+               video y boton
+    ---------------------------------------------*/
+    #video {
+        max-width: var(--videoW); 
+        max-height: var(--videoH); 
+        width: auto;
+        height: auto;
+        visibility: hidden;  
+    }
+    #boton{
+    visibility: visible;
+    position: absolute;
+    width: 20vh;
+    height: 20vh;
+    border: none;
+    color: blueviolet;
+    font-size: 5vh;
+    background-color: black;
+    font-family: "Comic Sans MS", cursive;
+    
+}
+  }

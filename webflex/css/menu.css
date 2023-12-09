@@ -1,0 +1,61 @@
+/*--------------------------------------------
+                nivel 1
+              contenedores
+- Defino la altura de la barra para que luego 
+  los elementos de la pagine se coloquen justo debajo
+- La posición es fixed para que en caso de hacer scrolldown 
+  el menu tambien baje.
+-------------------------------------------------*/
+header{
+    height: 10vh;
+}
+.menu_cont{
+    display: flex;
+    position: fixed;
+    width: 100vw;
+}
+/*--------------------------------------------
+                nivel 2
+              menu item
+-------------------------------------------------*/
+.menu_item{/* defino como se comportan lkos elementos del menu*/
+    display: flex;
+    flex-grow: 1;/* ocupando el mismo espacio proporcional a su contido*/
+    transition:all;/* atributros se animaran en el caso de que cambien de valor*/
+    transition-duration: 2s;/* el timepo de esa nimacion*/
+    transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);/* curva de tiempo de la aniamcion*/
+    align-items: center;/* elementos centrados */
+    justify-content: space-around;
+    height: 10vh;
+}
+.menu_item:hover{
+    flex-grow: 5; /* como cambia la distribucion del espacio cunado se hace hover*/
+}
+/* Abajo defino los valores que quiero modificar con js de cada elemnto del menu*/
+#m_item1{
+    order: 1;
+    background-color: green;
+}
+#m_item2{
+    order: 2;
+    background-color: rgb(111, 0, 255);
+
+}
+#m_item3{
+    order: 3;
+    background-color: brown;
+}
+a{ 
+    text-decoration: none;
+    font-family: "Comic Sans MS", cursive;
+    font-size: 4vh;
+}
+#link1 {
+    color: aliceblue;
+}
+#link2 {
+    color: aliceblue;
+}
+#link3 {
+    color: aliceblue;
+}

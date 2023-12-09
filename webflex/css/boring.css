@@ -1,0 +1,211 @@
+
+/*------------------------------------------------------
+            estilos para horizontal
+---------------------------------------------------------*/
+@media screen and (orientation: landscape) {
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    
+    
+    body{
+            display: flex;
+            flex-direction: row;
+    }
+    
+    
+    /*------------------------------------------------------
+                        Nivel 1
+    
+                      nav  y  main
+    --------------------------------------------------------*/
+    nav{
+        display: flex;
+        position: fixed;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        
+    
+    }
+    main{
+        display: flex;
+        margin-left: 8vw;
+        width: 92vw;
+        flex-direction: row;
+        justify-content: space-around;
+        background-color: black;
+        background-image: url('../recursos/fotos/7.jpeg');
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: repeat;
+        
+        
+        
+    }/*------------------------------------------------------
+                        Nivel 1-2
+    
+        ajuste conflictos css menu cunado horizontal
+
+        Al cambiar la posición de la barra de menú de
+        horizontal a vertical tengo que forzar ciertos
+        cambios. El tamaño de la barra, el tamaño 
+        de los items del menu  y el tamaño de la tipografía.
+    --------------------------------------------------------*/
+    .menu_cont{
+        width: 8vw !important;
+        height: 100vh !important;
+    }
+    .menu_item{
+        width: 8vw !important;
+        
+    }
+    #link2{
+        font-size: 2.5vh !important;
+    }
+    
+    
+    /*------------------------------------------------------
+                        Nivel 2
+    
+                      columnas 
+    --------------------------------------------------------*/
+    .colum{
+        display: flex;
+        width: 40vw;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+    
+    /*------------------------------------------------------
+                        Nivel 3
+    
+                contenedores contenido
+    --------------------------------------------------------*/
+    .container{
+        width: 30vw;
+        height: 50vh;
+        margin-top: 10vh;
+        margin-bottom: 10vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    /*------------------------------------------------------
+                        Nivel 4
+    
+                      fotos y videos
+    --------------------------------------------------------*/
+    .container:hover img{
+        max-width: 45vw;
+        max-height: 70vh;
+    }
+    video{
+        max-width: 30vw;
+        max-height: 50vh;
+    }
+    img{
+        max-width: 30vw;
+        max-height: 50vh;
+        transition: all;
+        transition-duration: 1s;
+    }
+    
+    }
+/*------------------------------------------------------
+            estilos para vertical
+---------------------------------------------------------*/
+@media screen and (orientation: portrait) {
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    
+    
+    body{
+            display: flex;
+            flex-direction: column;
+    }
+    
+    
+    /*------------------------------------------------------
+                        Nivel 1
+    
+                      nav  y  main
+    --------------------------------------------------------*/
+    nav{
+        display: flex;
+        position: fixed;
+        height: 10vh;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        background-color: aqua;
+        z-index: 3;
+        width: 100%;
+        
+    
+    }
+    main{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        background-color: black;
+        background-image: url('../recursos/fotos/7.jpeg');
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: repeat;
+        
+        
+        
+    }
+    
+    /*------------------------------------------------------
+                        Nivel 2
+    
+                      columnas 
+    --------------------------------------------------------*/
+    .colum{
+        display: flex;
+        width: 40vw;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+    
+    /*------------------------------------------------------
+                        Nivel 3
+    
+                contenedores contenido
+    --------------------------------------------------------*/
+    .container{
+        width: 20vw;
+        height: 50vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    /*------------------------------------------------------
+                        Nivel 4
+    
+                      fotos y videos
+    --------------------------------------------------------*/
+    .container:hover img{
+        max-width: 40vw;
+        max-height: 80vh;
+        
+    
+    }
+    video{
+        max-width: 30vw;
+        max-height: 50vh;
+    }
+    img{
+        max-width: 30vw;
+        max-height: 50vh;
+        transition: all;
+        transition-duration: 1s;
+    }
+    }
